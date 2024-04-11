@@ -15,10 +15,10 @@ pandas = "*"
 scikit-learn = "*"
 matplotlib = "*"
 JAX = "*"
-jupyter = "*"
+jupyter = ">=1.0.0,<1.1"
 tensorflow = "*"
-pytorch = "*"
-keras = "*"
+pytorch = ">=2.1.2,<2.2"
+keras = ">=2.15.0,<2.16"
 
 [target.unix.dependencies]
 pixi-pycharm = "*"
