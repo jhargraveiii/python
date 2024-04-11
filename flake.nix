@@ -15,7 +15,7 @@
         config.nvidiaSupport = true;
       };
       fhs = pkgs.buildFHSUserEnv {
-        name = "python-pixi-shell";
+        name = "python-pixi-cuda";
         targetPkgs = pkgs: with pkgs; [
           cudaPackages_12.cudatoolkit
           cudaPackages_12.libcublas
@@ -56,11 +56,10 @@
           unzip
           util-linux
           wget
-
           pixi
-          python311
-          python311Packages.pip
-          python311Packages.virtualenv
+          python39
+          python39Packages.pip
+          python39Packages.virtualenv
         ];
         profile = ''
           # CUDA
@@ -69,7 +68,10 @@
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11_stable_open}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
         '';
-        runScript = "bash";
+        runScript = ''
+          echo 'eval "$(pixi completion --shell bash)"' >> ~/.bashrc
+          pixi shell
+        '';
       };
     in
     {
