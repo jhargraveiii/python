@@ -21,7 +21,6 @@
           cudaPackages_12.libcublas
           cudaPackages_12.cudnn
           cudaPackages_12.cuda_nvcc
-          #cudaPackages_12.tensorrt
           cudaPackages_12.cutensor
           linuxPackages.nvidia_x11_stable_open
           libGLU
@@ -48,6 +47,7 @@
           git
           gitRepo
           gnumake
+          cmake
           gnupg
           gperf
           libselinux
@@ -57,6 +57,7 @@
           util-linux
           wget
           pixi
+          bazel
           python39
           python39Packages.pip
           python39Packages.virtualenv
@@ -67,10 +68,8 @@
           export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11_stable_open}/lib
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11_stable_open}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
-        '';
-        runScript = ''
-          echo 'eval "$(pixi completion --shell bash)"' >> ~/.bashrc
-          pixi shell
+          export KERAS_BACKEND="jax"
+          export JAX_PLATFORM_NAME="cuda"
         '';
       };
     in

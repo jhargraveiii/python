@@ -3,20 +3,33 @@ name = "python"
 version = "0.1.0"
 description = "Python for Machine Learning"
 authors = ["Jim Hargrave <jim.hargrave@strakergroup.com>"]
-channels = ["conda-forge"]
+channels = ["conda-forge", "nvidia", "pytorch", "tensorflow"]
 platforms = ["linux-64"]
 
 [dependencies]
-python = "3.9.*"
+python = "3.12.*"
+jax = "*"
+jaxlib = "*"
+jaxlie = "*"
+jax-dataclasses = "*"
 numpy = "*"
 pandas = "*"
 scikit-learn = "*"
 matplotlib = "*"
-JAX = "*"
-tensorflow-gpu = "*"
 jupyter = "*"
-pytorch-gpu = "*"
 keras = "*"
+pytest = "*"
+ipython = "*"
+coloredlogs = "*"
+pylint = "*"
 
 [target.unix.dependencies]
 pixi-pycharm = "*"
+
+[system-requirements]
+cuda = "12.2"
+
+[tool.pixi.feature.gpu]
+# cuda-nvcc and cuda-cupti are just a workaround for
+# https://github.com/conda-forge/jaxlib-feedstock/pull/241
+dependencies = {cuda-version = "12.*", cuda-nvcc  = "*", cuda-cupti = "*", jaxlib = "* *cuda*"}
