@@ -1,5 +1,5 @@
 {
-  description = "An FHS shell with Python and CUDA using Pixi.";
+  description = "An FHS shell for CUDA and Pixi.";
 
   inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
@@ -15,13 +15,13 @@
         config.nvidiaSupport = true;
       };
       fhs = pkgs.buildFHSUserEnv {
-        name = "python-pixi-cuda";
+        name = "cuda";
         targetPkgs = pkgs: with pkgs; [
-          cudaPackages_12.cudatoolkit
-          cudaPackages_12.libcublas
-          cudaPackages_12.cudnn
-          cudaPackages_12.cuda_nvcc
-          cudaPackages_12.cutensor
+          cudaPackages_12_3.cudatoolkit
+          cudaPackages_12_3.libcublas
+          cudaPackages_12_3.cudnn
+          cudaPackages_12_3.cuda_nvcc
+          cudaPackages_12_3.cutensor
           linuxPackages.nvidia_x11_stable_open
           libGLU
           libGL
@@ -58,19 +58,23 @@
           wget
           pixi
           bazel
-          python39
-          python39Packages.pip
-          python39Packages.virtualenv
         ];
         profile = ''
           # CUDA
-          export CUDA_PATH=${pkgs.cudaPackages_12.cudatoolkit}
+          export CUDA_PATH=${pkgs.cudaPackages_12_3.cudatoolkit}
           export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11_stable_open}/lib
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11_stable_open}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
           export KERAS_BACKEND="jax"
           export JAX_PLATFORM_NAME="cuda"
         '';
+
+        runScript = ''
+          #!/bin/sh
+
+          pixi install
+          pixi shell
+        ''; 
       };
     in
     {

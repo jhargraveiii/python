@@ -1,13 +1,18 @@
 [project]
 name = "python"
-version = "0.1.0"
+version = "1.0.0"
 description = "Python for Machine Learning"
 authors = ["Jim Hargrave <jim.hargrave@strakergroup.com>"]
-channels = ["conda-forge", "nvidia", "pytorch", "tensorflow"]
+channels = [
+    "nvidia",
+    { channel = "conda-forge", priority = -1 },
+    { channel = "tensorflow", priority = -3 },
+    { channel = "pytorch", priority = -2 },
+]
 platforms = ["linux-64"]
 
 [dependencies]
-python = "3.12.*"
+python = ">=3.12"
 jax = "*"
 jaxlib = "*"
 jaxlie = "*"
@@ -22,14 +27,15 @@ pytest = "*"
 ipython = "*"
 coloredlogs = "*"
 pylint = "*"
+pytorch = "*"
 
 [target.unix.dependencies]
 pixi-pycharm = "*"
 
 [system-requirements]
-cuda = "12.2"
+cuda = "12.3"
 
 [tool.pixi.feature.gpu]
 # cuda-nvcc and cuda-cupti are just a workaround for
 # https://github.com/conda-forge/jaxlib-feedstock/pull/241
-dependencies = {cuda-version = "12.*", cuda-nvcc  = "*", cuda-cupti = "*", jaxlib = "* *cuda*"}
+dependencies = { cuda-version = "12.3.*", cuda-nvcc = "*", cuda-cupti = "*", jaxlib = "* *cuda*", pytorch-cuda = { version = "12.3.*", channel = "pytorch" }, tensorflow-cuda = { version = "12.3.*", channel = "tensorflow" } }
