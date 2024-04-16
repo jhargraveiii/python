@@ -41,6 +41,7 @@
 
         runScript = ''
           pixi shell
+          #jupyter-notebook --no-browser
         '';
       };
     in
