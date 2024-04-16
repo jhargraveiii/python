@@ -9,9 +9,10 @@ platforms = ["linux-64"]
 [dependencies]
 cudnn = "*"
 cuda = "*"
-python = ">=3.10"
+cuda-nvcc = { channel = "nvidia", version = "*" }
+python = "~=3.10"
+jaxlib = "*=*cuda*"
 jax = "*"
-jaxlib = "* *cuda*"
 numpy = "*"
 pandas = "*"
 scikit-learn = "*"
