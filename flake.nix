@@ -38,11 +38,6 @@
           export KERAS_BACKEND="jax"
           export JAX_PLATFORM_NAME="cuda"
         '';
-
-        runScript = ''
-          pixi shell
-          #jupyter-notebook --no-browser
-        '';
       };
     in
     {
