@@ -31,6 +31,7 @@
           cmake
         ];
         profile = ''
+          export UV_HTTP_TIMEOUT=900
           export CUDA_PATH=/home/jimh/DATA2/python/.pixi/envs/default
           export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11}/lib
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"

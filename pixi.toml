@@ -10,7 +10,7 @@ platforms = ["linux-64"]
 cudnn = "*"
 cuda = ">=12"
 cuda-nvcc = { channel = "nvidia", version = "*" }
-python = "~=3.10"
+python = "~=3.12"
 jaxlib = "*=*cuda*"
 jax = "*"
 numpy = "*"
@@ -23,9 +23,13 @@ pytest = "*"
 ipython = "*"
 coloredlogs = "*"
 pylint = "*"
+python-dotenv = "*"
+llama-cpp-python = "*"
+openai = "*"
 
 [pypi-dependencies]
 torch = "*"
+google-generativeai = "*"
 
 [[tool.pixi.source]]
 name = "torch"
