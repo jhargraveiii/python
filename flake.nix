@@ -48,7 +48,7 @@
         name = "cuda";
         targetPkgs = pkgs: with pkgs; [
           latest_pixi
-          linuxPackages.nvidia_x11
+          linuxPackages_6_8.nvidia_x11
           git
           gcc
           gnumake
