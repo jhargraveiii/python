@@ -15,11 +15,35 @@
           allowBroken = true;
           nvidiaSupport = true;
         };
+        hostPlatform = {
+          gcc = {
+            arch = "znver3";
+            tune = "znver3";
+          };
+          system = "x86_64-linux";
+
+        };
+        buildPlatform = {
+          gcc = {
+            arch = "znver3";
+            tune = "znver3";
+          };
+          system = "x86_64-linux";
+
+        };
       };
 
       latest_pixi = pkgs.callPackage ./pixi.nix {
         inherit (pkgs) stdenv rustPlatform fetchFromGitHub pkg-config libgit2 openssl installShellFiles;
       };
+
+      nix = {
+        settings = {
+          experimental-features = [ "nix-command" "flakes" ];
+          system-features = [ "benchmark" "big-parallel" "kvm" "nixos-test" "gccarch-znver3" ];
+        };
+      };
+
       fhs = pkgs.buildFHSUserEnv {
         name = "cuda";
         targetPkgs = pkgs: with pkgs; [

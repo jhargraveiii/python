@@ -442,6 +442,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/dc/a6/12a0c976140511d8bc8a16ad15793b2aef29ac927baa0786ccb7ddbb6e1c/googleapis_common_protos-1.63.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/89/7c/1412c5a39b59c3e8a72cd4f46d29450486c48746ab831c9750eb42d770e9/grpcio-1.62.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/33/63/56a8c67a77947d0ebc31a03c5dea8d2c933ab3ad30019b0bafa3e50a5ef6/grpcio_status-1.62.2-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/f1/44/f5c14cd65dd2136e6e2b7c45f539236ba4de309db3ed574aecc1d0a24536/guidance-0.1.13.tar.gz
       - pypi: https://files.pythonhosted.org/packages/a8/6c/d2fbdaaa5959339d53ba38e94c123e4e84b8fbc4b84beb0e70d7c1608486/httplib2-0.22.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/38/e9/5f72929373e1a0e8d142a130f3f97e6ff920070f87f91c4e13e40e0fba5a/networkx-3.3-py3-none-any.whl
@@ -457,12 +458,17 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/4b/2a/0a131f572aa09f741c30ccd45a8e56316e8be8dfc7bc19bf0ab7cfef7b19/nvidia_nccl_cu12-2.20.5-py3-none-manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/ff/ff/847841bacfbefc97a00036e0fce5a0f086b640756dc38caea5e1bb002655/nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/da/d3/8057f0587683ed2fcd4dbfbdfdfa807b9160b809976099d36b8f60d08f03/nvidia_nvtx_cu12-12.1.105-py3-none-manylinux1_x86_64.whl
+      - pypi: https://files.pythonhosted.org/packages/33/55/af02708f230eb77084a299d7b08175cff006dea4f2721074b92cdb0296c0/ordered_set-4.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ad/41/7361075f3a31dcd05a6a38cfd807a6eecbfb6dbfe420d922cd400fc03ac1/proto_plus-1.23.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/15/db/7f731524fe0e56c6b2eb57d05b55d3badd80ef7d1f1ed59db191b2fdd8ab/protobuf-4.25.3-cp37-abi3-manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/23/7e/5f50d07d5e70a2addbccd90ac2950f81d1edd0783630651d9268d7f1db49/pyasn1-0.6.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/13/68/8906226b15ef38e71dc926c321d2fe99de8048e9098b5dfd38343011c886/pyasn1_modules-0.4.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/7f/90/c9b51f3cdff89cd8f93382060330f43d1af098a6624cff439e700791e922/pydot-2.0.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/14/e8/d02f14c939939d55bf0187537bf5747870bc34e28a0515b15202067ae274/pyformlang-1.0.10-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/62/bb/482ca5269d92ebacd0c88e5646d0247e26253b8d597774bab5ffba9d618f/regex-2024.4.16-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/49/97/fa78e3d2f65c02c8e1268b9aba606569fe97f6c8f7c2d74394553347c145/rsa-4.9-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d2/05/e6600db80270777c4a64238a98d442f0fd07cc8915be2a1c16da7f2b9e74/sympy-1.12-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/aa/ba/ca12efe6fa6fde7ba30e27743b0d847838bc08d58e99faf11bae935ecbad/tiktoken-0.6.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/51/03/1abad10990c76bee3703857b1617563b241f87d297ee466dbad922b0c308/torch-2.3.0-cp312-cp312-manylinux1_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/81/c0/7461b49cd25aeece13766f02ee576d1db528f1c37ce69aee300e075b485b/uritemplate-4.1.1-py2.py3-none-any.whl
 packages:
@@ -2646,6 +2652,34 @@ packages:
   license_family: LGPL
   size: 2010273
   timestamp: 1711318435463
+- kind: pypi
+  name: guidance
+  version: 0.1.13
+  url: https://files.pythonhosted.org/packages/f1/44/f5c14cd65dd2136e6e2b7c45f539236ba4de309db3ed574aecc1d0a24536/guidance-0.1.13.tar.gz
+  sha256: acf6ffccbca85eb5f0c358f7f715586bf3e540703f55739e42f43bf7d2eb5627
+  requires_dist:
+  - diskcache
+  - openai>=1.0
+  - platformdirs
+  - tiktoken>=0.3
+  - requests
+  - numpy
+  - ordered-set
+  - pyformlang
+  - protobuf
+  - fastapi
+  - uvicorn
+  - ipython ; extra == 'docs'
+  - numpydoc ; extra == 'docs'
+  - sphinx-rtd-theme ; extra == 'docs'
+  - sphinx ; extra == 'docs'
+  - nbsphinx ; extra == 'docs'
+  - jsonschema ; extra == 'test'
+  - pytest ; extra == 'test'
+  - transformers ; extra == 'test'
+  - torch ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  requires_python: '>=3.8'
 - kind: conda
   name: gxx
   version: 12.3.0
@@ -6118,6 +6152,16 @@ packages:
   - pkg:pypi/optree
   size: 272503
   timestamp: 1711402615959
+- kind: pypi
+  name: ordered-set
+  version: 4.1.0
+  url: https://files.pythonhosted.org/packages/33/55/af02708f230eb77084a299d7b08175cff006dea4f2721074b92cdb0296c0/ordered_set-4.1.0-py3-none-any.whl
+  sha256: 046e1132c71fcf3330438a539928932caf51ddbc582496833e23de611de14562
+  requires_dist:
+  - pytest ; extra == 'dev'
+  - black ; extra == 'dev'
+  - mypy ; extra == 'dev'
+  requires_python: '>=3.7'
 - kind: conda
   name: overrides
   version: 7.7.0
@@ -6640,6 +6684,29 @@ packages:
   - pkg:pypi/pydantic-settings
   size: 18048
   timestamp: 1708377239151
+- kind: pypi
+  name: pydot
+  version: 2.0.0
+  url: https://files.pythonhosted.org/packages/7f/90/c9b51f3cdff89cd8f93382060330f43d1af098a6624cff439e700791e922/pydot-2.0.0-py3-none-any.whl
+  sha256: 408a47913ea7bd5d2d34b274144880c1310c4aee901f353cf21fe2e526a4ea28
+  requires_dist:
+  - pyparsing>=3
+  - chardet ; extra == 'dev'
+  - black ; extra == 'dev'
+  - zest-releaser[recommended] ; extra == 'release'
+  - chardet ; extra == 'tests'
+  - black ; extra == 'tests'
+  - tox ; extra == 'tests'
+  requires_python: '>=3.7'
+- kind: pypi
+  name: pyformlang
+  version: 1.0.10
+  url: https://files.pythonhosted.org/packages/14/e8/d02f14c939939d55bf0187537bf5747870bc34e28a0515b15202067ae274/pyformlang-1.0.10-py3-none-any.whl
+  sha256: fd347bade2141feb6d29bfb23b90e87107910de8434566124ad42ef375662ceb
+  requires_dist:
+  - networkx
+  - numpy
+  - pydot
 - kind: conda
   name: pygments
   version: 2.17.2
@@ -7131,6 +7198,12 @@ packages:
   - pkg:pypi/referencing
   size: 42071
   timestamp: 1710763821612
+- kind: pypi
+  name: regex
+  version: 2024.4.16
+  url: https://files.pythonhosted.org/packages/62/bb/482ca5269d92ebacd0c88e5646d0247e26253b8d597774bab5ffba9d618f/regex-2024.4.16-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  sha256: 08dea89f859c3df48a440dbdcd7b7155bc675f2fa2ec8c521d02dc69e877db70
+  requires_python: '>=3.7'
 - kind: conda
   name: requests
   version: 2.31.0
@@ -7532,6 +7605,16 @@ packages:
   - pkg:pypi/threadpoolctl
   size: 23032
   timestamp: 1710943698793
+- kind: pypi
+  name: tiktoken
+  version: 0.6.0
+  url: https://files.pythonhosted.org/packages/aa/ba/ca12efe6fa6fde7ba30e27743b0d847838bc08d58e99faf11bae935ecbad/tiktoken-0.6.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  sha256: 6318b2bb2337f38ee954fd5efa82632c6e5ced1d52a671370fa4b2eff1355e91
+  requires_dist:
+  - regex>=2022.1.18
+  - requests>=2.26.0
+  - blobfile>=2 ; extra == 'blobfile'
+  requires_python: '>=3.8'
 - kind: conda
   name: tinycss2
   version: 1.2.1

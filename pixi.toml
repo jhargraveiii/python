@@ -30,6 +30,7 @@ openai = "*"
 [pypi-dependencies]
 torch = "*"
 google-generativeai = "*"
+guidance = "*"
 
 [[tool.pixi.source]]
 name = "torch"
