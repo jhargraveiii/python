@@ -13,11 +13,11 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "pixi";
-  version = "0.20.0";
+  version = "0.20.1";
   src = fetchFromGitHub {
     owner = "prefix-dev";
     repo = "pixi";
-    rev = "v0.20.0";
+    rev = "v${version}";
     sha256 = "sha256-7ah5u3E9nodo/0YSuaswRY07zz8EQgvttbVKjw/USCc=";
   };
 

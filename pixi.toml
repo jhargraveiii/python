@@ -26,6 +26,7 @@ pylint = "*"
 python-dotenv = "*"
 llama-cpp-python = "*"
 openai = "*"
+ollama = "*"
 
 [pypi-dependencies]
 torch = "*"

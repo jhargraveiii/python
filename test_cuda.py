@@ -13,6 +13,8 @@ from keras import initializers
 from keras import layers
 from keras import ops
 from keras import optimizers
+from keras import Variable
+
 
 
 class MyDense(layers.Layer):
@@ -24,11 +26,11 @@ class MyDense(layers.Layer):
         input_dim = input_shape[-1]
         w_shape = (input_dim, self.units)
         w_value = initializers.GlorotUniform()(w_shape)
-        self.w = backend.Variable(w_value, name="kernel")
+        self.w = Variable(w_value, name="kernel")
 
         b_shape = (self.units,)
         b_value = initializers.Zeros()(b_shape)
-        self.b = backend.Variable(b_value, name="bias")
+        self.b = Variable(b_value, name="bias")
 
     def call(self, inputs):
         return ops.matmul(inputs, self.w) + self.b

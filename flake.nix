@@ -47,8 +47,8 @@
       fhs = pkgs.buildFHSUserEnv {
         name = "cuda";
         targetPkgs = pkgs: with pkgs; [
-          latest_pixi
-          linuxPackages_6_8.nvidia_x11
+          pixi
+          linuxPackages_latest.nvidia_x11
           git
           gcc
           gnumake
