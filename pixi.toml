@@ -7,9 +7,6 @@ channels = ["conda-forge", "nvidia"]
 platforms = ["linux-64"]
 
 [dependencies]
-cudnn = "*"
-cuda = ">=12"
-cuda-nvcc = { channel = "nvidia", version = "*" }
 python = "~=3.12"
 jaxlib = "*=*cuda*"
 jax = "*"

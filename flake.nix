@@ -5,9 +5,17 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
+      overlays = [
+        import
+        ./overlay
+        {
+          inherit inputs;
+          lib = nixpkgs.lib;
+        }
+      ];
       pkgs = import nixpkgs {
         inherit system;
         config = {
@@ -47,7 +55,11 @@
       fhs = pkgs.buildFHSUserEnv {
         name = "cuda";
         targetPkgs = pkgs: with pkgs; [
-          pixi
+          cudaPackages.cudatoolkit
+          cudaPackages.cudnn
+          cudaPackages.tensorrt
+          cudaPackages.cuda_nvcc
+          latest_pixi
           linuxPackages_latest.nvidia_x11
           git
           gcc
@@ -55,8 +67,11 @@
           cmake
         ];
         profile = ''
+          export CFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
+          export CXXFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
+          export NVCCFLAGS="-Xptxas -O3 -arch=sm_89 -code=sm_89 -O3 --use_fast_math"
           export UV_HTTP_TIMEOUT=900
-          export CUDA_PATH=/home/jimh/DATA2/python/.pixi/envs/default
+          export CUDA_PATH=${pkgs.cudatoolkit}
           export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11}/lib
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
@@ -66,6 +81,12 @@
       };
     in
     {
+      nixpkgs =
+        {
+          overlays = [
+            overlays.cuda
+          ];
+        };
       devShells.${system}.default = fhs.env;
     };
 }
