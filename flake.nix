@@ -65,6 +65,8 @@
           gcc
           gnumake
           cmake
+          amd-blis
+          amd-libflame
         ];
         profile = ''
           export CFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
