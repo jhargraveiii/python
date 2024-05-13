@@ -74,7 +74,8 @@
           export NVCCFLAGS="-Xptxas -O3 -arch=sm_89 -code=sm_89 -O3 --use_fast_math"
           export UV_HTTP_TIMEOUT=900
           export CUDA_PATH=${pkgs.cudatoolkit}
-          export LD_LIBRARY_PATH=${pkgs.linuxPackages.nvidia_x11}/lib
+          export OPENBLAS=${pkgs.amd-blis}/lib/libopenblas.so
+          export LD_LIBRARY_PATH=${pkgs.amd-blis}/lib:${pkgs.amd-libflame}/lib:${pkgs.linuxPackages.nvidia_x11}/lib
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
           export KERAS_BACKEND="jax"
@@ -87,6 +88,7 @@
         {
           overlays = [
             overlays.cuda
+            overlays.numerical_amd
           ];
         };
       devShells.${system}.default = fhs.env;

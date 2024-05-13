@@ -21,6 +21,11 @@ let
     });
 in
 {
+  numerical_amd = final: prev: {
+    blas = prev.blas.override { blasProvider = final.amd-blis; };
+    lapack = prev.lapack.override { lapackProvider = final.amd-libflame; };
+  };
+
   cuda = final: prev: {
     # Override attributes of packages inside cudaPackages
     cudaPackages =
