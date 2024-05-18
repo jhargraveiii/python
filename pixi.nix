@@ -13,19 +13,19 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "pixi";
-  version = "0.20.1";
+  version = "0.22.0";
   src = fetchFromGitHub {
     owner = "prefix-dev";
     repo = "pixi";
     rev = "v${version}";
-    sha256 = "sha256-7ah5u3E9nodo/0YSuaswRY07zz8EQgvttbVKjw/USCc=";
+    sha256 = "sha256-fTASWWvqaBn4XH7FL0fhdSphKFKhIOddKwsbDmln1g8=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
       "async_zip-0.0.17" = "sha256-Q5fMDJrQtob54CTII3+SXHeozy5S5s3iLOzntevdGOs=";
-      "cache-key-0.0.1" = "sha256-qGFjI/LNf2p11BOgacYHU0hoXvCEjjnyAcAAIcD7YTo=";
+      "cache-key-0.0.1" = "sha256-fbaIeM4wgwi/3S8s9KRux8wKe6FbCBNPZFPekmrq2jA=";
       "pubgrub-0.2.1" = "sha256-sqC7R2mtqymYFULDW0wSbM/MKCZc8rP7Yy/gaQpjYEI=";
     };
   };

@@ -13,15 +13,22 @@
         ./overlay
         {
           inherit inputs;
-          lib = nixpkgs.lib;
         }
       ];
       pkgs = import nixpkgs {
         inherit system;
         config = {
-          allowUnfree = true;
           allowBroken = true;
           nvidiaSupport = true;
+          allowUnfree = true;
+          cudaSupport = true;
+          cuda = true;
+          cuBlas = true;
+          cudVersion = "12.4";
+          cudnnSupport = true;
+          tensorrtSupport = true;
+          cudaCapabilities = [ "8.9" ];
+          nvidia.acceptLicense = true;
         };
         hostPlatform = {
           gcc = {
@@ -59,10 +66,11 @@
           cudaPackages.cudnn
           cudaPackages.tensorrt
           cudaPackages.cuda_nvcc
-          latest_pixi
+          pixi
           linuxPackages_latest.nvidia_x11
           git
           gcc
+          gfortran
           gnumake
           cmake
           amd-blis
@@ -71,11 +79,10 @@
         profile = ''
           export CFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
           export CXXFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
-          export NVCCFLAGS="-Xptxas -O3 -arch=sm_89 -code=sm_89 -O3 --use_fast_math"
+          export NVCCFLAGS="-arch=sm_89 -O3"
           export UV_HTTP_TIMEOUT=900
           export CUDA_PATH=${pkgs.cudatoolkit}
-          export OPENBLAS=${pkgs.amd-blis}/lib/libopenblas.so
-          export LD_LIBRARY_PATH=${pkgs.amd-blis}/lib:${pkgs.amd-libflame}/lib:${pkgs.linuxPackages.nvidia_x11}/lib
+          export LD_LIBRARY_PATH=${pkgs.amd-blis}/lib:${pkgs.amd-libflame}/lib:${pkgs.linuxPackages.nvidia_x11}/lib:$LD_LIBRARY_PATH
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
           export KERAS_BACKEND="jax"
@@ -88,9 +95,9 @@
         {
           overlays = [
             overlays.cuda
-            overlays.numerical_amd
           ];
         };
+
       devShells.${system}.default = fhs.env;
     };
 }
