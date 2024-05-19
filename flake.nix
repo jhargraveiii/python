@@ -66,6 +66,9 @@
           cudaPackages.cudnn
           cudaPackages.tensorrt
           cudaPackages.cuda_nvcc
+          cudaPackages.libcublas.dev
+          cudaPackages.libcublas.lib
+          cudaPackages.libcublas.static
           pixi
           linuxPackages_latest.nvidia_x11
           git
@@ -77,12 +80,14 @@
           amd-libflame
         ];
         profile = ''
+          export CONDA_BUILD=1 
+          export PYPYPY_BUILD=1 
           export CFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
           export CXXFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
           export NVCCFLAGS="-arch=sm_89 -O3"
           export UV_HTTP_TIMEOUT=900
           export CUDA_PATH=${pkgs.cudatoolkit}
-          export LD_LIBRARY_PATH=${pkgs.amd-blis}/lib:${pkgs.amd-libflame}/lib:${pkgs.linuxPackages.nvidia_x11}/lib:$LD_LIBRARY_PATH
+          export LD_LIBRARY_PATH=${pkgs.amd-blis}/lib:${pkgs.amd-libflame}/lib:${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.cudaPackages.cudnn}/lib:${pkgs.cudaPackages.cudatoolkit}/lib64:${pkgs.cudaPackages.tensorrt}/lib:${pkgs.cudaPackages.libcublas.lib}/lib64:$LD_LIBRARY_PATH
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
           export KERAS_BACKEND="jax"
