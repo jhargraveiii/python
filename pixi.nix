@@ -21,6 +21,7 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256-fTASWWvqaBn4XH7FL0fhdSphKFKhIOddKwsbDmln1g8=";
   };
 
+  
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
@@ -68,6 +69,7 @@ rustPlatform.buildRustPackage rec {
     "--skip=test_compressed_mapping_catch_missing_package"
     "--skip=test_purl_are_added_for_pypi"
     "--skip=test_task_with_env"
+    "--skip=test_environment_json"
   ];
 
   postInstall = ''

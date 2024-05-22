@@ -69,10 +69,10 @@
           cudaPackages.libcublas.dev
           cudaPackages.libcublas.lib
           cudaPackages.libcublas.static
-          pixi
+          latest_pixi
           linuxPackages_latest.nvidia_x11
           git
-          gcc
+          gcc12
           gfortran
           gnumake
           cmake

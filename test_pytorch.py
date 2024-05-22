@@ -8,6 +8,8 @@ else:
     print("CUDA is not available.")
     exit()
 
+print(torch.__version__)
+
 # Set device to CUDA
 device = torch.device("cuda")
 
