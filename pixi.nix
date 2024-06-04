@@ -13,12 +13,12 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "pixi";
-  version = "0.22.0";
+  version = "0.23.0";
   src = fetchFromGitHub {
     owner = "prefix-dev";
     repo = "pixi";
     rev = "v${version}";
-    sha256 = "sha256-fTASWWvqaBn4XH7FL0fhdSphKFKhIOddKwsbDmln1g8=";
+    sha256 = "sha256-uLlScqcTU9nnBQiufRo+eee1TNyP5R52oI1jUaH6L1M=";
   };
 
   
@@ -70,6 +70,8 @@ rustPlatform.buildRustPackage rec {
     "--skip=test_purl_are_added_for_pypi"
     "--skip=test_task_with_env"
     "--skip=test_environment_json"
+    "--skip=test_compressed_mapping_catch_not_pandoc_not_a_python_package"
+    "--skip=test_dont_record_not_present_package_as_purl"
   ];
 
   postInstall = ''

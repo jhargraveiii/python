@@ -86,7 +86,7 @@
           export CXXFLAGS="-O3 -march=native -mtune=native -ffast-math -funroll-loops"
           export NVCCFLAGS="-arch=sm_89 -O3"
           export UV_HTTP_TIMEOUT=900
-          export CUDA_PATH=${pkgs.cudatoolkit}
+          export CUDA_PATH=${pkgs.cudaPackages.cudatoolkit}
           export LD_LIBRARY_PATH=${pkgs.amd-blis}/lib:${pkgs.amd-libflame}/lib:${pkgs.linuxPackages.nvidia_x11}/lib:${pkgs.cudaPackages.cudnn}/lib:${pkgs.cudaPackages.cudatoolkit}/lib64:${pkgs.cudaPackages.tensorrt}/lib:${pkgs.cudaPackages.libcublas.lib}/lib64:$LD_LIBRARY_PATH
           export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
           export EXTRA_CCFLAGS="-I/usr/include"
