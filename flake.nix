@@ -22,11 +22,7 @@
           nvidiaSupport = true;
           allowUnfree = true;
           cudaSupport = true;
-          cuda = true;
-          cuBlas = true;
           cudVersion = "12.4";
-          cudnnSupport = true;
-          tensorrtSupport = true;
           cudaCapabilities = [ "8.9" ];
           nvidia.acceptLicense = true;
         };
@@ -72,7 +68,7 @@
           latest_pixi
           linuxPackages_latest.nvidia_x11
           git
-          gcc12
+          gcc
           gfortran
           gnumake
           cmake

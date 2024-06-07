@@ -25,17 +25,18 @@ python-dotenv = "*"
 llama-cpp-python = "*"
 openai = "*"
 ollama = "*"
+sentencepiece = ">=0.1.96,<0.2.0"
 
 [pypi-dependencies]
 torch = "*"
 google-generativeai = "*"
 guidance = "*"
-exllamav2 = "*"
 tokenizers = "*"
+unbabel-comet = "*"
 
 [[tool.pixi.source]]
 name = "torch"
-url = "https://download.pytorch.org/whl/cu121"
+url = "https://download.pytorch.org/whl/cu123"
 packages = ["torch"]
 
 [target.unix.dependencies]
