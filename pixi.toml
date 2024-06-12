@@ -1,6 +1,6 @@
 [project]
 name = "python"
-version = "0.1.0"
+version = "1.0.0"
 description = "Python for Machine Learning"
 authors = ["Jim Hargrave <jim.hargrave@strakergroup.com>"]
 channels = ["conda-forge", "nvidia"]
@@ -26,6 +26,7 @@ llama-cpp-python = "*"
 openai = "*"
 ollama = "*"
 sentencepiece = ">=0.1.96,<0.2.0"
+huggingface_hub = "*"
 
 [pypi-dependencies]
 torch = "*"
@@ -33,6 +34,7 @@ google-generativeai = "*"
 guidance = "*"
 tokenizers = "*"
 unbabel-comet = "*"
+dspy-ai = { extras = ["chromadb"], version = "*" }
 
 [[tool.pixi.source]]
 name = "torch"

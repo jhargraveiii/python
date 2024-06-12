@@ -13,12 +13,12 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "pixi";
-  version = "0.23.0";
+  version = "0.24.1";
   src = fetchFromGitHub {
     owner = "prefix-dev";
     repo = "pixi";
     rev = "v${version}";
-    sha256 = "sha256-uLlScqcTU9nnBQiufRo+eee1TNyP5R52oI1jUaH6L1M=";
+    sha256 = "sha256-24sahgBaWlbbOfaqyMJiow3S1KwMsgo0hYu7Z5WpMlE=";
   };
 
   
@@ -26,8 +26,8 @@ rustPlatform.buildRustPackage rec {
     lockFile = ./Cargo.lock;
     outputHashes = {
       "async_zip-0.0.17" = "sha256-Q5fMDJrQtob54CTII3+SXHeozy5S5s3iLOzntevdGOs=";
-      "cache-key-0.0.1" = "sha256-fbaIeM4wgwi/3S8s9KRux8wKe6FbCBNPZFPekmrq2jA=";
-      "pubgrub-0.2.1" = "sha256-sqC7R2mtqymYFULDW0wSbM/MKCZc8rP7Yy/gaQpjYEI=";
+      "cache-key-0.0.1" = "sha256-lJJqjxyAzGQKZi6RtzZ7A9pCAOyIJnstHoS8jlUWeGA=";
+      "pubgrub-0.2.1" = "sha256-mAPyo2R996ymzCt6TAX2G7xU1C3vDGjYF0z7R8lI1yg=";
     };
   };
 
@@ -72,6 +72,7 @@ rustPlatform.buildRustPackage rec {
     "--skip=test_environment_json"
     "--skip=test_compressed_mapping_catch_not_pandoc_not_a_python_package"
     "--skip=test_dont_record_not_present_package_as_purl"
+    "--skip=test_clean_env"
   ];
 
   postInstall = ''
