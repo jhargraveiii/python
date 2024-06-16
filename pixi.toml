@@ -8,6 +8,7 @@ platforms = ["linux-64"]
 
 [dependencies]
 pip = "*"
+pydantic = "*"
 python = "~=3.11"
 numpy = "*"
 pandas = "*"
@@ -19,21 +20,16 @@ ipython = "*"
 coloredlogs = "*"
 pylint = "*"
 python-dotenv = "*"
-dspy-ai = "*"
+llama-cpp-python = "*"
 
 [pypi-dependencies]
 torch = "*"
+dspy-ai = { git = "https://github.com/stanfordnlp/dspy.git", extras = ["chromadb"]}
 
 [[tool.pixi.source]]
 name = "torch"
 url = "https://download.pytorch.org/whl/cu124"
 packages = ["torch"]
 
-[target.unix.dependencies]
-pixi-pycharm = "*"
-
 [system-requirements]
 cuda = "12.4"
-
-
-

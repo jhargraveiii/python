@@ -1,56 +1,21 @@
 import dspy
-from dspy.teleprompt import BootstrapFewShot
-import os
 
-model = dspy.OllamaLocal(
-    model="qwen2:0.5b",
-    base_url=os.environ.get("OLLAMA_URL", "http://localhost:11434"),
-    max_tokens=500,
-)
-
-# Correctly configure DSPy to use the local Ollama model
-dspy.settings.configure(lm=model)
-
-class MathProblem(dspy.Signature):
-    question = dspy.InputField(desc="A math word problem")
-    answer = dspy.OutputField(desc="The numerical answer to the question")
-
-class MathSolver(dspy.Module):
+# Define a simple DSPy module
+class SimpleModule(dspy.Module):
     def __init__(self):
         super().__init__()
-        self.solve = dspy.Predict(MathProblem)
-    
-    def forward(self, question):
-        return self.solve(question=question)
+        self.signature = 'input -> output'
 
-# Define training examples
-train_examples = [
-    dspy.Example(
-        question="What is 12 plus 18?",
-        answer="30"
-    ).with_inputs("question"),
-    dspy.Example(
-        question="If I have 7 apples and eat 3, how many do I have left?", 
-        answer="4"
-    ).with_inputs("question")
-]
+    def forward(self, input):
+        return f"Processed: {input}"
 
-# Define a simple metric function
-def metric(example, actual, trace=None):
-    return 1.0 if example.answer == actual.answer else 0.0
+# Instantiate the module
+simple_module = SimpleModule()
 
-# Optimize the prompt
-teleprompter = BootstrapFewShot(
-    metric=metric,
-    max_bootstrapped_demos=5
-)
+# Test the module with a sample input
+input_data = "Hello, DSPy!"
+output_data = simple_module(input_data)
 
-optimized_solver = teleprompter.compile(
-    MathSolver(), 
-    trainset=train_examples
-)
+# Print the output
+print(output_data)
 
-# Test the optimized solver
-test_question = "Sally has 5 more marbles than John. Together they have 35 marbles. How many marbles does Sally have?"
-result = optimized_solver(test_question)
-print(result.answer)  # Assuming the result object has an attribute 'answer' for simplicity
