@@ -339,13 +339,15 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/60/2d/963b266bb8f88492d5ab4232d74292af8beb5b6fdae97902df9e284d4c32/datasets-2.20.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/20/8d/778b7d51b981a96554f29136cd59ca7880bf58094338085bcf2a979a0e6a/Deprecated-1.2.14-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl
-      - pypi: git+https://github.com/stanfordnlp/dspy.git@2a008d65b155d36d6e587aa9d4a10948cd031039
+      - pypi: git+https://github.com/stanfordnlp/dspy.git@09993d29b83f4de9acf64d9d36d7b0aaec3dd4c0
       - pypi: https://files.pythonhosted.org/packages/44/aa/edf5205465b70cee020b711f1f4b6179a0ae369cc13aadb8f8ec6fd7d2f5/filelock-3.15.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/41/f0/7e988a019bc54b2dbd0ad4182ef2d53488bb02e58694cd79d61369e85900/flatbuffers-24.3.25-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b3/c9/0bc5ee7e1f5cc7358ab67da0b7dfe60fbd05c254cea5c6108e7d1ae28c63/frozenlist-1.4.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/ba/a3/16e9fe32187e9c8bc7f9b7bcd9728529faa725231a0c96f2f98714ff2fc5/fsspec-2024.5.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/54/70/e07c381e6488a77094f04c85c9caf1c8008cdc30778f7019bc52e5285ef0/gdown-5.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/28/b1/2f3dc4c814a83e618a0a624f37bcc885fd8c2f2af6f0e547288d2c4f64c2/google_auth-2.30.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/98/87/1608d23bb9879694579fff5dc56d60e3d48e012fd08670f140cf82f6cf26/googleapis_common_protos-1.63.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/00/be/d59db2d1d52697c6adc9eacaf50e8965b6345cc143f671e1ed068818d5cf/graphviz-0.20.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/bb/6b/384dee7e0121cbd1757bdc1824a5ee28e43d8d4e3f99aa59521f629442fe/greenlet-3.0.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/11/4b/a6e4922029d8bd89e637c62f90a50a85add9ebdc5be65154956a7c2b82a1/grpcio-1.64.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/69/d6/73f9d1b7c4da5f0544bc17680d0fa9932445423b90cd38e1ee77d001a4f5/huggingface_hub-0.23.4-py3-none-any.whl
@@ -399,6 +401,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/8f/63/2eb7d30fe126dbd8a398386f14ab0421bb722515f9f50c35fd4048251285/structlog-24.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/53/e18c8c97d0b2724d85c9830477e3ebea3acf1dcdc6deb344d5d9c93a9946/sympy-1.12.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/61/a1/6bb0cbebefb23641f068bb58a2bc56da9beb2b1c550242e3c540b37698f3/tenacity-8.3.0-py3-none-any.whl
+      - pypi: git+https://github.com/zou-group/textgrad.git@1be9d24af91580e54ce323a93c192439d17f4419
       - pypi: https://files.pythonhosted.org/packages/a7/03/fb50fc03f86016b227a967c8d474f90230c885c0d18f78acdfda7a96ce56/tokenizers-0.19.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/07/9a/4c5e74264439837814656201da13a898056a5201c976ef042544bceb840f/torch-2.3.1-cp311-cp311-manylinux1_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/18/eb/fdb7eb9e48b7b02554e1664afd3bd3f117f6b6d6c5881438a0b055554f9b/tqdm-4.66.4-py3-none-any.whl
@@ -1516,7 +1519,7 @@ packages:
 - kind: pypi
   name: dspy-ai
   version: 2.4.9
-  url: git+https://github.com/stanfordnlp/dspy.git@2a008d65b155d36d6e587aa9d4a10948cd031039
+  url: git+https://github.com/stanfordnlp/dspy.git@09993d29b83f4de9acf64d9d36d7b0aaec3dd4c0
   requires_dist:
   - backoff~=2.2.1
   - joblib~=1.3.2
@@ -2004,6 +2007,25 @@ packages:
   - zstandard ; extra == 'test-full'
   - tqdm ; extra == 'tqdm'
   requires_python: '>=3.8'
+- kind: pypi
+  name: gdown
+  version: 5.2.0
+  url: https://files.pythonhosted.org/packages/54/70/e07c381e6488a77094f04c85c9caf1c8008cdc30778f7019bc52e5285ef0/gdown-5.2.0-py3-none-any.whl
+  sha256: 33083832d82b1101bdd0e9df3edd0fbc0e1c5f14c9d8c38d2a35bf1683b526d6
+  requires_dist:
+  - beautifulsoup4
+  - filelock
+  - requests[socks]
+  - tqdm
+  - build ; extra == 'test'
+  - mypy ; extra == 'test'
+  - pytest ; extra == 'test'
+  - pytest-xdist ; extra == 'test'
+  - ruff ; extra == 'test'
+  - twine ; extra == 'test'
+  - types-requests ; extra == 'test'
+  - types-setuptools ; extra == 'test'
+  requires_python: '>=3.8'
 - kind: conda
   name: gettext
   version: 0.22.5
@@ -2118,6 +2140,25 @@ packages:
   purls: []
   size: 96855
   timestamp: 1711634169756
+- kind: pypi
+  name: graphviz
+  version: 0.20.3
+  url: https://files.pythonhosted.org/packages/00/be/d59db2d1d52697c6adc9eacaf50e8965b6345cc143f671e1ed068818d5cf/graphviz-0.20.3-py3-none-any.whl
+  sha256: 81f848f2904515d8cd359cc611faba817598d2feaac4027b266aa3eda7b3dde5
+  requires_dist:
+  - tox>=3 ; extra == 'dev'
+  - flake8 ; extra == 'dev'
+  - pep8-naming ; extra == 'dev'
+  - wheel ; extra == 'dev'
+  - twine ; extra == 'dev'
+  - sphinx<7,>=5 ; extra == 'docs'
+  - sphinx-autodoc-typehints ; extra == 'docs'
+  - sphinx-rtd-theme ; extra == 'docs'
+  - pytest<8.1,>=7 ; extra == 'test'
+  - pytest-mock>=3 ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  - coverage ; extra == 'test'
+  requires_python: '>=3.8'
 - kind: pypi
   name: greenlet
   version: 3.0.3
@@ -6697,6 +6738,21 @@ packages:
   - pkg:pypi/terminado?source=conda-forge-mapping
   size: 22452
   timestamp: 1710262728753
+- kind: pypi
+  name: textgrad
+  version: 0.1.3
+  url: git+https://github.com/zou-group/textgrad.git@1be9d24af91580e54ce323a93c192439d17f4419
+  requires_dist:
+  - openai>=1.23.6
+  - tenacity>=8.2.3
+  - python-dotenv>=1.0.0
+  - pandas>=1.5.3
+  - platformdirs>=3.11.0
+  - datasets>=2.14.6
+  - diskcache>=5.6.3
+  - graphviz>=0.20.3
+  - gdown>=5.2.0
+  requires_python: '>=3.8'
 - kind: conda
   name: threadpoolctl
   version: 3.5.0

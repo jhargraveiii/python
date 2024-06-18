@@ -25,6 +25,7 @@ llama-cpp-python = "*"
 [pypi-dependencies]
 torch = "*"
 dspy-ai = { git = "https://github.com/stanfordnlp/dspy.git", extras = ["chromadb"]}
+textgrad = { git = "https://github.com/zou-group/textgrad.git" }
 
 [[tool.pixi.source]]
 name = "torch"
