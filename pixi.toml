@@ -21,10 +21,11 @@ coloredlogs = "*"
 pylint = "*"
 python-dotenv = "*"
 llama-cpp-python = "*"
+joblib = "1.3.2"
 
 [pypi-dependencies]
 torch = "*"
-dspy-ai = { git = "https://github.com/stanfordnlp/dspy.git", extras = ["chromadb"]}
+dspy-ai = { git = "https://github.com/stanfordnlp/dspy.git"}
 textgrad = { git = "https://github.com/zou-group/textgrad.git" }
 
 [[tool.pixi.source]]
